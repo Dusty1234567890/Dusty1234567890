@@ -1,0 +1,214 @@
+local Namecall
+Namecall = hookmetamethod(game, "__namecall", function(self, ...)
+   if getnamecallmethod() == "FireServer" and tostring(self) == "Ban" then
+       return
+   elseif getnamecallmethod() == "FireServer" and tostring(self) == "WalkSpeedChanged" then
+       return
+   elseif getnamecallmethod() == "FireServer" and tostring(self) == "AdminGUI" then
+       return
+   end
+   return Namecall(self, ...)
+end)
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local PhantomForcesWindow = Library:NewWindow("GASTER HUB | test version")
+
+local KillingCheats = PhantomForcesWindow:NewSection("Alchemist")
+_G.AntiRagdoll = true
+if _G.AntiRagdoll then
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Changed:Connect(function()
+if game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Value == true and _G.AntiRagdoll then
+repeat task.wait() game.Players.LocalPlayer.Character.Torso.Anchored = true
+until game.Players.LocalPlayer.Character:WaitForChild("Ragdolled").Value == false
+game.Players.LocalPlayer.Character.Torso.Anchored = false
+end
+end)
+end)
+end
+
+KillingCheats:CreateButton("Click before the next button", function()
+local arenaBarrier = workspace:FindFirstChild("ArenaBarrier")
+local deathBarrier = workspace:FindFirstChild("DEATHBARRIER")
+local deathBarrier2 = workspace:FindFirstChild("DEATHBARRIER2")
+local dedBarrier = workspace:FindFirstChild("dedBarrier")
+
+if arenaBarrier then
+    arenaBarrier:Destroy()
+end
+
+if deathBarrier then
+    deathBarrier:Destroy()
+end
+
+if deathBarrier2 then
+    deathBarrier2:Destroy()
+end
+
+if dedBarrier then
+    dedBarrier:Destroy()
+end
+local platform = Instance.new("Part")
+platform.Size = Vector3.new(1000, 1, 1000) 
+platform.Position = Vector3.new(-24058.8594, 306.104187, -844.946045)
+platform.CFrame = CFrame.new(platform.Position)
+
+platform.BrickColor = BrickColor.new("Bright blue")
+platform.Material = Enum.Material.Plastic
+
+platform.Transparency = 1
+
+platform.Parent = workspace
+
+local weld = Instance.new("WeldConstraint")
+weld.Parent = platform
+weld.Part0 = platform
+weld.Part1 = workspace.Terrain
+wait(0.2)
+if game.Players.LocalPlayer.leaderstats.Slaps.Value >= 666 then
+fireclickdetector(workspace.Lobby.Ghost.ClickDetector) 
+wait(0.3)
+game:GetService("ReplicatedStorage").Ghostinvisibilityactivated:FireServer() 
+else
+game.StarterGui:SetCore("SendNotification", {
+    Title = "ERROR";
+    Text = "You don't own Ghost";
+    Icon = "rbxassetid://10905815930";
+    Duration = "10"
+})
+end
+wait(0.3)
+if game:GetService("BadgeService"):UserHasBadgeAsync(game.Players.LocalPlayer.UserId, 2124819262) then
+    fireclickdetector(workspace.Lobby.Plague.ClickDetector)
+    wait(0.3)
+    while true do
+        local players = game:GetService("Players"):GetPlayers()
+        for _, player in ipairs(players) do
+            local character = player.Character
+            if character then
+                local leftArm = character:FindFirstChild("Left Arm")
+                if leftArm then
+                    local args = {
+                        [1] = leftArm
+                    }
+                    game:GetService("ReplicatedStorage").PlagueHit:FireServer(unpack(args))
+                end
+            end
+        end
+        wait(1)
+    end
+else
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "ERROR";
+        Text = "You don't own Plague";
+        Icon = "rbxassetid://10905815930";
+        Duration = "10"
+    })
+end
+end)
+KillingCheats:CreateToggle("Auto hunt people", function(value)
+if value then
+kid = true
+if kid then
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 0)
+end
+getgenv().test = true
+if getgenv().test == true then
+for count = 1, math.huge do
+if getgenv().test == false then
+break
+end
+wait(1.5)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-24036.2266, 316.696503, -855.74939, -0.432100594, 0.195096105, -0.880469501, -3.06623953e-08, 0.976319253, 0.216334686, 0.901825428, 0.0934783742, -0.421868116)
+wait(3)
+local Players = game:GetService("Players")
+local player = game.Players.LocalPlayer
+
+local function getRandomPlayer()
+    local players = Players:GetPlayers()
+    local randomIndex = math.random(1, #players)
+    local randomPlayer = players[randomIndex]
+    
+    if randomPlayer.Character and randomPlayer.Character:FindFirstChild("InLobby") then
+        return getRandomPlayer()
+    end
+    
+    if randomPlayer.Character and randomPlayer.Character:FindFirstChild("ded") then
+        return getRandomPlayer()
+    end
+ 
+ if randomPlayer.Character and randomPlayer.Character:FindFirstChild("InLabyrinth")  then
+       return getRandomPlayer()
+    end
+    return randomPlayer
+end
+
+local function teleportToRandomPlayer()
+    local randomPlayer = getRandomPlayer()
+    if randomPlayer.Character then
+        player.Character:SetPrimaryPartCFrame(randomPlayer.Character.PrimaryPart.CFrame)
+    end
+end
+
+    teleportToRandomPlayer()
+end
+end
+else
+kid = false
+if kid then
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1, 0)
+end
+getgenv().test = false
+if getgenv().test == true then
+for count = 1, math.huge do
+if getgenv().test == false then
+break
+end
+wait(1.5)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-24036.2266, 316.696503, -855.74939, -0.432100594, 0.195096105, -0.880469501, -3.06623953e-08, 0.976319253, 0.216334686, 0.901825428, 0.0934783742, -0.421868116)
+wait(3)
+local Players = game:GetService("Players")
+local player = game.Players.LocalPlayer
+
+local function getRandomPlayer()
+    local players = Players:GetPlayers()
+    local randomIndex = math.random(1, #players)
+    local randomPlayer = players[randomIndex]
+    
+    if randomPlayer.Character and randomPlayer.Character:FindFirstChild("InLobby") then
+        return getRandomPlayer()
+    end
+    
+    if randomPlayer.Character and randomPlayer.Character:FindFirstChild("ded") then
+        return getRandomPlayer()
+    end
+ 
+ if randomPlayer.Character and randomPlayer.Character:FindFirstChild("InLabyrinth")  then
+       return getRandomPlayer()
+    end
+    return randomPlayer
+end
+
+local function teleportToRandomPlayer()
+    local randomPlayer = getRandomPlayer()
+    if randomPlayer.Character then
+        player.Character:SetPrimaryPartCFrame(randomPlayer.Character.PrimaryPart.CFrame)
+    end
+end
+
+    teleportToRandomPlayer()
+end
+end
+end
+end)
+_G.AntiRock = true
+while _G.AntiRock do
+for _,v in pairs(game.Players:GetChildren()) do
+                    if v.Character:FindFirstChild("rock") then
+                        v.Character:FindFirstChild("rock").CanTouch = false
+                        v.Character:FindFirstChild("rock").CanQuery = false
+                    end
+                end
+task.wait()
+end
